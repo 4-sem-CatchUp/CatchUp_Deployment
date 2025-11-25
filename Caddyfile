@@ -1,0 +1,9 @@
+{env.DOMAIN_URL} {
+    handle_path /api/* {
+        reverse_proxy backend:80
+    }
+
+    tls {
+        dns duckdns {env.DUCKDNS_TOKEN}
+    }
+}
